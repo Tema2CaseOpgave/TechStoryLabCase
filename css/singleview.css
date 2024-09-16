@@ -1,3 +1,33 @@
+* {
+  /* outline: dashed 1px red; */
+}
+
 /* Layout */
+
+.menu {
+  height: 3rem;
+  background-color: rgb(202, 202, 202);
+  outline: dashed 1px green;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.breadcrumbs i {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+img {
+  width: 60%;
+  aspect-ratio: 16/9;
+}
 
 /* Style */
