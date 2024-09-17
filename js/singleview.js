@@ -1,14 +1,14 @@
 window.addEventListener("DOMContentLoaded", init);
 
-// const urlParams = new URLSearchParams(window.location.search);
-// const id = urlParams.get("id");
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("number");
 
-const id = "C00332";
+// const id = "C00332";
 console.log(id);
 
 function init() {
   fetch(
-    "https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/TSLNEW?ID=cs.%5B%22id%22%5D",
+    `https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/TSLNEW?number=eq.${id}`,
     {
       method: "GET",
       headers: {
@@ -24,6 +24,6 @@ function init() {
 function showProduct(items) {
   console.log(items);
   // items.forEach(items);
-
+  document.querySelector("img").scr = `./assets/img/${id}`;
   document.querySelector("h2").textContent = items.ProductName;
 }
