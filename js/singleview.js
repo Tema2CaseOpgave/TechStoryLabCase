@@ -22,8 +22,9 @@ function init() {
 }
 
 function showProduct(items) {
+  const item = items[0];
+
   console.log(items);
-  // items.forEach(items);
-  document.querySelector("img").scr = `./assets/img/${id}`;
-  document.querySelector("h2").textContent = items.ProductName;
+  document.querySelector("h2").textContent = item.productname;
+  document.querySelector("img").src = `./assets/img/${item.Img}`;
 }
