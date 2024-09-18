@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+@media (min-width: 570px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.smallProduct {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.smallProduct:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.smallProduct img {
+  max-width: 100%;
+  height: auto;
+}
+
+.smallProduct h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.smallProduct .subtle {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.smallProduct .info {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff2701;
+}
+
+.Brugsvejledning {
+  background-color: #ffeb3b00;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.Brugsvejledning p {
+  margin: 0.5rem 0;
+  color: #dd0505;
+  font-weight: bold;
+  text-align: right;
+}
+
+.smallProduct .Læsmere {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ff351200;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: end;
+  font-weight: bold;
+}
+
+.smallProduct .Læsmere:hover {
+  color: #ff1e00;
+}
