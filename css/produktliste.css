@@ -1,0 +1,131 @@
+/* Nulstilling af margin, padding og aktivering af border-box til alle elementer */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Standard skrifttype og stil til body */
+body {
+  font-family: "Arial", sans-serif;
+}
+
+/* Justering af margin for h2-overskrifter */
+h2 {
+  margin: 5%;
+}
+
+/* Justering af margin for h3-overskrifter */
+h3 {
+  margin-left: 2%;
+}
+
+/* Opsætning af grid-layout til produktcontaineren */
+.grid {
+  margin: 5%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Stil til afsnitstitler med sektionstitle-klassen */
+.section-title {
+  font-size: 1.5rem; /* Justering af skriftstørrelse */
+  color: #333;
+  margin-bottom: 1rem; /* Afstand mellem titel og grid */
+  text-align: left;
+}
+
+/* Stil til elementer med klassen 'Brugsvejledning' og underklassen 'p1', specifikt span-elementer */
+.Brugsvejledning .p1 span {
+  display: inline-block;
+  background-color: #4caf4fc1;
+  color: rgb(40, 37, 37);
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Justering af venstremargin for afsnit */
+p {
+  margin-left: 2%;
+}
+
+/* Responsivt grid-layout, ændres ved skærme bredere end 570px */
+@media (min-width: 570px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Stil til produkter i flex-layout */
+.product1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(254, 251, 251, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-effekt til produkter, ændrer skygge og position */
+.product1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Justering af billeder i produktet, maksimerer bredde */
+.product1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stil til produktinformation (f.eks. pris, navn) */
+.product1 .info {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff2701;
+}
+
+/* Stil til 'Brugsvejledning'-sektionen */
+.Brugsvejledning {
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Stil til afsnit inde i 'Brugsvejledning' */
+.Brugsvejledning p {
+  margin: 0.5rem 0;
+  color: #dd0505;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Stil til 'Læsmere'-knappen i produktet */
+.product1 .Læsmere {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ff351200;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: end;
+  font-weight: bold;
+}
+
+/* Hover-effekt til 'Læsmere'-knappen, ændrer tekstfarve */
+.product1 .Læsmere:hover {
+  color: #ff1e00;
+}
