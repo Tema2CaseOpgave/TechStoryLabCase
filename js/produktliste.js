@@ -87,7 +87,7 @@ function visProdukter(produkter) {
     }
 
     // Sætter linket til produktets detaljer
-    kopi.querySelector("a").href = `singleview.html?id=${productId}`; // Sætter hyperlink til en enkeltvisning af produktet baseret på dets ID
+    kopi.querySelector("a").href = `singleview.html?number=${produkt.number}`; // Sætter hyperlink til en enkeltvisning af produktet baseret på dets ID
 
     // Tilføjer produktet til containeren (grid'en)
     container.appendChild(kopi); // Føjer produktets HTML-kopi til grid-containeren på siden
