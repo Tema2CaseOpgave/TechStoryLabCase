@@ -11,11 +11,11 @@ const apiKey =
 function hentData() {
   const params = new URLSearchParams(document.location.search);
   const category = params.get("category");
-  4;
+
   // Hvis en kategori er angivet i URL'en, opdateres API-anmodningens URL
   let productURI = apiURL;
   if (category) {
-    productURI = `${apiURL}?category=eq.${category}`;
+    productURI += `&category=eq.${category}`;
   }
 
   // Henter produktdata fra API'et
@@ -30,8 +30,7 @@ function hentData() {
     .then((produkter) => visProdukter(produkter)) // Sender data til funktionen 'visProdukter'
     .catch((error) => console.error("Fejl ved hentning af data:", error)); // Håndtering af fejl
 }
-
-// Funktion til at vise de hentede produkter
+// Funktion til at vise produkterne på siden
 function visProdukter(produkter) {
   const skabelon = document.querySelector("#pro").content; // Henter produktskabelonen
   const container = document.querySelector(".grid"); // Bruger grid-div'en til at vise produkterne
@@ -40,47 +39,57 @@ function visProdukter(produkter) {
   produkter.forEach((produkt) => {
     const kopi = skabelon.cloneNode(true); // Kloner skabelonen for hvert produkt
 
-    // Tjekker om 'ID', 'ProductName' og 'Img' findes
-    const productId = produkt.ID || "defaultId"; // Bruger det faktiske felt eller falder tilbage til 'defaultId'
-    const productName = produkt.ProductName || "Navnløst produkt";
-    const productPrice = produkt.price || "N/A"; // Tjek CSV'en for det korrekte feltnavn
-    const imageName = produkt.Img || "default-image.webp";
-    const productCategory = produkt.Category || "Ukendt kategori";
-    const productBrand = produkt.Brand || "Ukendt brand";
+    // Tjekker om 'ID', 'ProductName', og 'Img' findes
+    const productId = produkt.imgname
+      ? produkt.imgname.toUpperCase() // Hvis 'imgname' findes, konverteres det til uppercase
+      : "defaultId"; // Hvis ikke, sættes en standard-id
+    const productName = produkt.productname || "Navnløst produkt"; // Standard hvis productname ikke findes
+    const imageName = produkt.Img || "default-image.webp"; // Standard billede hvis Img ikke er defineret
+    const productCategory = produkt.productname || "Ukendt kategori"; // Standard kategori hvis produktnavn ikke er tilgængelig
+    const productBrand = produkt.subcategory || "Ukendt brand"; // Standard brand hvis subcategory ikke er defineret
+
+    const cleanImageName = (name) =>
+      name
+        .replace(/[-.]/g, "") // Fjerner bindestreger og punkter fra billednavn
+        .replace(/\.webp$/i, "") // Fjerner filtypen ".webp"
+        .toLowerCase(); // Konverterer til små bogstaver
+
+    // Rydder imgnavn og Img-feltet for sammenligning
+    const cleanImgname = cleanImageName(produkt.img || "");
+    const cleanImgField = cleanImageName(produkt.Imgname || "");
+
+    const imgMatch = cleanImgname === cleanImgField; // Sammenligner de to felter for match
 
     // Sætter billedets kilde og alt-tekst ved hjælp af den lokale 'assets/img' mappe
     kopi.querySelector("img").src = `assets/img/${imageName}`;
     kopi.querySelector("img").alt = productName;
 
-    // Sætter produktets ID
+    // Sætter produktkategori og brand, og tilføjer imgnavn hvis der er et match
     kopi.querySelector("h3").textContent = productId;
-
-    // Sætter produktkategori og brand
-    kopi.querySelector(
-      ".subtle"
-    ).textContent = `${productCategory} | ${productBrand}`;
-
-    // Sætter produktets pris
-    kopi.querySelector(".info span").textContent = productPrice;
-
-    // Hvis produktet er tilgængeligt, opdateres brugsvejledningen
-    if (produkt.available) {
-      kopi.querySelector(".Brugsvejledning .p1 span").textContent = "Ja";
+    if (imgMatch) {
+      kopi.querySelector(
+        ".text1"
+      ).textContent = `${productCategory} | ${productBrand} | Image: ${produkt.imgname}`;
     } else {
-      kopi.querySelector(".Brugsvejledning .p1 span").textContent = "Nej";
+      kopi.querySelector(
+        ".text1"
+      ).textContent = `${productCategory} | ${productBrand}`;
     }
 
-    // Hvis produktet har rabat, vises det
-    if (produkt.discount) {
-      kopi.querySelector(
-        ".Brugsvejledning .p2 span"
-      ).textContent = `${produkt.discount}%`;
+    // Tilfældig indstilling af tilgængelighed (Ledig eller Ikke Ledig)
+    const isAvailable = Math.random() > 0.4; // 60% sandsynlighed for at produktet er ledigt
+
+    if (isAvailable) {
+      kopi.querySelector(".Brugsvejledning .p1 span").textContent = "Ledig"; // Viser, at produktet er tilgængeligt
+    } else {
+      kopi.querySelector(".Brugsvejledning .p1 span").textContent =
+        "Ikke Ledig"; // Viser, at produktet ikke er tilgængeligt
     }
 
     // Sætter linket til produktets detaljer
-    kopi.querySelector("a").href = `singleview.html?id=${productId}`;
+    kopi.querySelector("a").href = `singleview.html?id=${productId}`; // Sætter hyperlink til en enkeltvisning af produktet baseret på dets ID
 
     // Tilføjer produktet til containeren (grid'en)
-    container.appendChild(kopi);
+    container.appendChild(kopi); // Føjer produktets HTML-kopi til grid-containeren på siden
   });
 }
