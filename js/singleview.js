@@ -51,7 +51,8 @@ function showRec(recitem) {
   const clone = templateRec.cloneNode(true);
 
   clone.querySelector("img").src = `./assets/img/${recitem.Img}`;
-  clone.querySelector("p").textContent = "Hej med dig";
+  clone.querySelector("p").textContent =
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto consequatur cum error iste minus suscipit amet facilis eos veniam";
 
   recprod.appendChild(clone);
 }
