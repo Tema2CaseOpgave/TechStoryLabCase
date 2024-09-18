@@ -3,7 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/094ef135cc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/singleview.css" />
     <title>Single View</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="breadcrumbs">
+          <li><a href="./index.html">Home</a></li>
+          <li><i class="fa-solid fa-greater-than"></i></li>
+          <li><a href="./produktliste.html">Product List</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Valgte produkt</h2>
+        <section>
+          <img src="" alt="" />
+          <div id="productimgcontainer"></div>
+        </section>
+        <section>
+          <h3>How to use?</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
+            consequatur cum error iste minus suscipit amet facilis eos veniam,
+            corporis doloribus vero inventore voluptatibus odio natus numquam
+            ipsum unde voluptatem.
+          </p>
+        </section>
+        <section>
+          <h3>Where to get?</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
+            consequatur cum error iste minus suscipit amet facilis eos veniam,
+            corporis doloribus vero inventore voluptatibus odio natus numquam
+            ipsum unde voluptatem.
+          </p>
+        </section>
+        <section>
+          <h3>Recommended Accessories:</h3>
+          <div id="recomprod"></div>
+        </section>
+      </article>
+    </main>
+
+    <template>
+      <img class="prodimg" src="" alt="" />
+    </template>
+    <script src="./js/singleview.js"></script>
+  </body>
 </html>
