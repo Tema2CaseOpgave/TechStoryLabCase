@@ -3,11 +3,8 @@ window.addEventListener("DOMContentLoaded", hentData);
 
 //  Funktionen til at hente produktdata fra API'et,
 function hentData() {
-  const param = new URLSearchParams(document.location.search);
-  const category = params.get("category");
-
   // API-nøgle og URL til at hente produktdata
-  fetch("https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/TSLNEW", {
+  fetch("https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/kategorier?limit=5", {
     method: "GET",
     headers: {
       apikey:
@@ -15,10 +12,14 @@ function hentData() {
     },
   })
     .then((res) => res.json())
-    .then(showData);
+    .then((data) => showData(data));
+}
 
-  function showData(items) {
-    console.log(items);
-    // items.forEach(items);
-  }
+function showData(items) {
+  console.log(items);
+  items.forEach(showCat);
+}
+
+function showCat(item) {
+  console.log("item", item);
 }

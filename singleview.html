@@ -30,10 +30,14 @@
     </header>
     <main>
       <article>
-        <h2>Valgte produkt</h2>
+        <h2 id="valgteprod">Valgte produkt</h2>
         <section>
-          <img src="" alt="" />
-          <div id="productimgcontainer"></div>
+          <img id="prodimg" src="" alt="" />
+          <div>
+            <img id="underimg_a" src="" alt="" />
+            <img id="underimg_b" src="" alt="" />
+            <img id="underimg_c" src="" alt="" />
+          </div>
         </section>
         <section>
           <h3>How to use?</h3>
@@ -55,14 +59,16 @@
         </section>
         <section>
           <h3>Recommended Accessories:</h3>
-          <div id="recomprod"></div>
+          <div class="recprod"></div>
         </section>
       </article>
     </main>
 
     <template>
-      <img class="prodimg" src="" alt="" />
+      <img src="" alt="" />
+      <p>...</p>
     </template>
+
     <script src="./js/singleview.js"></script>
   </body>
 </html>

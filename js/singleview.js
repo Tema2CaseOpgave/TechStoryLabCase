@@ -19,12 +19,39 @@ function init() {
   )
     .then((res) => res.json())
     .then((data) => showProduct(data));
+
+  fetch(`https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/TSLNEW?limit=3`, {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlucmNoYmFkYmtpcmZ6a2NlYmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5NzA4MjYsImV4cCI6MjA0MTU0NjgyNn0.mpSt_VfMJynts4yNhF_lHvJafqeHolxXL7wYKBacfjA",
+    },
+  })
+    .then((resa) => resa.json())
+    .then((dataa) => handleRec(dataa));
+}
+
+function handleRec(recjson) {
+  recjson.forEach(showRec);
 }
 
 function showProduct(items) {
   const item = items[0];
 
-  console.log(items);
-  document.querySelector("h2").textContent = item.productname;
-  document.querySelector("img").src = `./assets/img/${item.Img}`;
+  document.querySelector("#valgteprod").textContent = item.productname;
+  document.querySelector("#prodimg").src = `./assets/img/${item.Img}`;
+  document.querySelector("#underimg_a").src = `./assets/img/${item.imga}`;
+  document.querySelector("#underimg_b").src = `./assets/img/${item.imgb}`;
+  document.querySelector("#underimg_c").src = `./assets/img/${item.imgc}`;
+}
+
+function showRec(recitem) {
+  const recprod = document.querySelector(".recprod");
+  const templateRec = document.querySelector("template").content;
+  const clone = templateRec.cloneNode(true);
+
+  clone.querySelector("img").src = `./assets/img/${recitem.Img}`;
+  clone.querySelector("p").textContent = "Hej med dig";
+
+  recprod.appendChild(clone);
 }
