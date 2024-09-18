@@ -1,1 +1,82 @@
+img {
+  max-width: 100%;
+}
 
+/* Bestemmer og indeholder al indhold */
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Knappen som viser diverse kategorier */
+.kategoriknap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 7px;
+  padding: 0.5% 20%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Bestemmer billede og kategoriknap */
+.subcontainer {
+  opacity: 1;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+/* Bestemmer texten som vises ved hover */
+.hovertext {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: left;
+  /* background-color: rgba(35, 50, 73, 0.9);
+  color: white; */
+}
+
+/* Billede+knap forsvinder ved hover */
+.container:hover .subcontainer {
+  opacity: 0;
+}
+
+/* Text vises ved hover over billede+knap  */
+.container:hover .hovertext {
+  opacity: 1;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 800px) {
+  .container {
+    position: relative;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+  }
+  .text a:link {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 1em 2em;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+} */
