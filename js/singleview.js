@@ -1,10 +1,9 @@
 window.addEventListener("DOMContentLoaded", init);
 
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("number");
+const number = urlParams.get("number");
 
-// const id = "C00332";
-console.log(id);
+console.log(number);
 
 function init() {
   const option = {
@@ -16,7 +15,7 @@ function init() {
   };
 
   fetch(
-    `https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/TSLNEW?number=eq.${id}`,
+    `https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/TSLNEW?number=eq.${number}`,
     option
   )
     .then((res) => res.json())
