@@ -7,8 +7,17 @@ a {
   cursor: pointer;
 }
 
+body {
+  margin: 8% 10%;
+  /* gap: 3rem; */
+}
+
+h1 h2 h3 {
+  color: var(--BackgroundColor2);
+}
+
 .farvetsection {
-  /* background-color: ; */
+  background-color: var(--BackgroundColor2);
 }
 
 /* Bestemmer og indeholder al indhold */
