@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", hentData);
 //  Funktionen til at hente produktdata fra API'et,
 function hentData() {
   // API-nøgle og URL til at hente produktdata
-  fetch("https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/kategorier?limit=5", {
+  fetch("https://inrchbadbkirfzkcebcg.supabase.co/rest/v1/kategorier", {
     method: "GET",
     headers: {
       apikey:
@@ -22,4 +22,18 @@ function showData(items) {
 
 function showCat(item) {
   console.log("item", item);
+
+  const template = document.querySelector("template").content;
+  const categoryList = document.querySelector("#categoryList");
+
+  // Lav en kopi (får børnene med?)
+  const copy = template.cloneNode(true);
+
+  // Ændrer indhold
+  copy.querySelector("h2").textContent = item.imgname;
+  copy.querySelector("a").href = `produktliste.html?id=${item.category}`;
+  copy.querySelector("img").src = `./assets/img/${item.Img}`;
+
+  // Appende
+  categoryList.appendChild(copy);
 }
