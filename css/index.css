@@ -4,6 +4,11 @@ img {
 
 a {
   color: black;
+  cursor: pointer;
+}
+
+.farvetsection {
+  /* background-color: ; */
 }
 
 /* Bestemmer og indeholder al indhold */
@@ -70,5 +75,9 @@ a {
 
   body {
     margin: 8% 10%;
+  }
+
+  .kategoriknap {
+    padding: 1rem 5rem;
   }
 }
