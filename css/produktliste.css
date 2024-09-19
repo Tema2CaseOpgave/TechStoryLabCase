@@ -8,6 +8,7 @@
 /* Standard skrifttype og stil til body */
 body {
   font-family: "Arial", sans-serif;
+  background-color: var(--BackgroundColor1);
 }
 
 /* Justering af margin for h2-overskrifter */
@@ -43,7 +44,7 @@ h3 {
   display: inline-block;
   background-color: #4caf4fc1;
   color: rgb(40, 37, 37);
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 1rem;
   text-align: center;
 }
@@ -68,7 +69,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--BackgroundColor1);
   padding: 1rem;
   border-radius: 8px;
   text-align: left;
@@ -92,7 +93,7 @@ p {
 .product1 .info {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #ff2701;
+  color: #ae5748;
 }
 
 /* Stil til 'Brugsvejledning'-sektionen */
