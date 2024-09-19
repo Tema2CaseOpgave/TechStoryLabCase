@@ -4,16 +4,21 @@
 
 /* Layout */
 
+body {
+  padding-left: 2rem;
+}
+main {
+  background-color: var(--BackgroundColor1);
+}
 .menu {
   height: 5rem;
-  background-color: rgb(202, 202, 202);
-  outline: dashed 1px green;
 }
-
+ul {
+  list-style: none;
+}
 ul li a {
   text-decoration: none;
 }
-
 .breadcrumbs {
   display: flex;
   flex-direction: row;
