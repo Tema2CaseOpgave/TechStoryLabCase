@@ -30,7 +30,7 @@ function showCat(item) {
   const copy = template.cloneNode(true);
 
   // Ændrer indhold
-  copy.querySelector("h2").textContent = item.imgname;
+  copy.querySelector("h3").textContent = item.imgname;
   copy.querySelector("a").href = `produktliste.html?id=${item.category}`;
   copy.querySelector("img").src = `./assets/img/${item.Img}`;
 

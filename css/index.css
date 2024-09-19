@@ -2,6 +2,10 @@ img {
   max-width: 100%;
 }
 
+a {
+  color: black;
+}
+
 /* Bestemmer og indeholder al indhold */
 .container {
   position: relative;
@@ -17,7 +21,7 @@ img {
   border: 2px solid black;
   background-color: white;
   border-radius: 7px;
-  padding: 0.5% 20%;
+  padding: 1rem 5rem;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -52,31 +56,19 @@ img {
   opacity: 1;
 }
 
-/*
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 800px) {
-  .container {
-    position: relative;
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10%;
+/* Responsivt grid-layout, ændres ved skærme bredere end 570px */
+@media (min-width: 570px) {
+  .information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  .text a:link {
-    background-color: var(--primary);
-    color: var(--secondary);
-    padding: 1em 2em;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.5rem;
+
+  #categoryList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
-} */
+
+  body {
+    margin: 8% 10%;
+  }
+}
