@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--BackgroundColor);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--FontRed);
+}
+
 /* Sådan bruges en variabel exempel: 
 section {
 
@@ -22,13 +32,15 @@ background-color: var(--BackgroundColor2);
 
   /* Colors */
 
-  --BackgroundColor1: #ededed;
-  --BackgroundColor2: #233248;
+  --BackgroundColor: #ededed;
+  --SectionColor: #233248;
+  --HoverCat: hsla(216, 35%, 21%, 80%);
 
   /* bruger man backgroundcolor1 så skal man også bruge fontcolor1 */
 
   --FontColor1: #233248;
   --FontColor2: #ededed;
+  --FontRed: #ea4f46;
 
   /* Other */
   --LineHeight: 0.625rem;
