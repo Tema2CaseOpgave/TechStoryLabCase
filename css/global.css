@@ -4,9 +4,33 @@
   box-sizing: border-box;
 }
 
+/* Sådan bruges en variabel exempel: 
+section {
+
+background-color: var(--BackgroundColor2);
+}
+
+*/
+
 :root {
   /* Fonte */
   --FontFamilyTekst: Arial, Helvetica, sans-serif;
+  --FontSizeH1: 2.5rem;
+  --FontSizeH2: 1.2rem;
+  --FontSizeH3: 0.84rem;
+  --FontSizeP: 0.7rem;
 
   /* Colors */
+
+  --BackgroundColor1: #ededed;
+  --BackgroundColor2: #233248;
+
+  /* bruger man backgroundcolor1 så skal man også bruge fontcolor1 */
+
+  --FontColor1: #233248;
+  --FontColor2: #ededed;
+
+  /* Other */
+  --LineHeight: 0.625rem;
+  --BorderRadius: 0.3rem;
 }
