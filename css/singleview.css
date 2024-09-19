@@ -5,7 +5,7 @@
 /* Layout */
 
 body {
-  padding-left: 2rem;
+  padding: 2rem;
 }
 main {
   background-color: var(--BackgroundColor1);
