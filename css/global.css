@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--FontFamilyTekst);
+  line-height: var(--LineHeight);
 }
 
 body {
@@ -43,6 +45,6 @@ background-color: var(--BackgroundColor2);
   --FontRed: #ea4f46;
 
   /* Other */
-  --LineHeight: 0.625rem;
+  --LineHeight: 25.6px;
   --BorderRadius: 0.3rem;
 }
