@@ -8,7 +8,12 @@
 /* Standard skrifttype og stil til body */
 body {
   font-family: "Arial", sans-serif;
-  background-color: var(--BackgroundColor1);
+  --BackgroundColor: #ededed;
+}
+
+h1 {
+  margin: 2%;
+  padding-left: 5%;
 }
 
 /* Justering af margin for h2-overskrifter */
@@ -42,9 +47,9 @@ h3 {
 /* Stil til elementer med klassen 'Brugsvejledning' og underklassen 'p1', specifikt span-elementer */
 .Brugsvejledning .p1 span {
   display: inline-block;
-  background-color: #4caf4fc1;
-  color: rgb(40, 37, 37);
-  padding: 1rem;
+  background-color: #ea4f46;
+  color: #ededed;
+  padding: 0.8rem;
   font-size: 1rem;
   text-align: center;
 }
@@ -52,6 +57,10 @@ h3 {
 /* Justering af venstremargin for afsnit */
 p {
   margin-left: 2%;
+}
+
+.none {
+  color: #333;
 }
 
 /* Responsivt grid-layout, ændres ved skærme bredere end 570px */
@@ -69,9 +78,9 @@ p {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background-color: var(--BackgroundColor1);
+  --BackgroundColor: #ededed;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 0.3rem;
   text-align: left;
   box-shadow: 0 4px 8px rgba(254, 251, 251, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -118,7 +127,7 @@ p {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: #ff351200;
-  color: rgb(0, 0, 0);
+  color: #ea4f46;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -128,5 +137,5 @@ p {
 
 /* Hover-effekt til 'Læsmere'-knappen, ændrer tekstfarve */
 .product1 .Læsmere:hover {
-  color: #ff1e00;
+  color: #233248;
 }
