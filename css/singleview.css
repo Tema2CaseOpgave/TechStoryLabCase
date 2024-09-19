@@ -26,8 +26,32 @@ ul li a {
 }
 
 img {
-  width: 60%;
+  width: 100%;
   aspect-ratio: 16/9;
 }
 
 /* Style */
+
+#imgextra {
+  display: flex;
+  flex-direction: row;
+}
+.recprod {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid_1_2 {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2fr 1fr;
+}
+
+.grid_1_2 img {
+  grid-column: 1;
+  grid-row: 1;
+}
+.grid p {
+  grid-column: 1;
+  grid-row: 2;
+}
